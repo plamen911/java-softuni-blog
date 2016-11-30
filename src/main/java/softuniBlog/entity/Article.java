@@ -61,4 +61,16 @@ public class Article {
     public String getSummary() {
         return this.getContent().substring(0, this.getContent().length() / 2) + "...";
     }
+
+    private Category category;
+
+    @ManyToOne()
+    @JoinColumn(nullable = false, name = "categoryId")
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
